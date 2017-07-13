@@ -1,5 +1,58 @@
-$red: lightblue;
+$first_look: '../assets/first_look.jpg';
+
+body, html {
+  margin: 0;
+}
 
 body {
-  background: $red
+  background: black;
+  color: white
+}
+
+main {
+  section {
+    &#first_look {
+      // height: 600px;
+      background-image: url($first_look);
+      background-size: 100%;
+      background-repeat: no-repeat;
+
+      .title {
+        font-size: 3em;
+        text-align: center;
+        font-style: italic;
+        letter-spacing: 0.1em;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .sizer {
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        padding: 100px 0;
+
+        .vid-cont {
+          position: relative;
+          width: 100%;
+          padding-bottom: 62%;
+
+          iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+  }
 }
