@@ -1,6 +1,7 @@
 $first_look: '../assets/first_look.jpg';
 $makeup: '../assets/makeupBG.jpg';
 $clip_1: '../assets/clip_1.jpg';
+$clip_2: '../assets/clip_2.jpg';
 
 body, html {
   margin: 0;
@@ -144,7 +145,17 @@ main {
       }
     }
 
-    &#clip_1 {
+
+    &.clip {
+      &#clip_1 {
+        background-image: url($clip_1);
+        background-position: 50%;
+      }
+      &#clip_2 {
+        background-image: url($clip_2);
+        background-position: 50%;
+      }
+      background-repeat: no-repeat;
       padding: 100px 0;
       text-align: center;
       display: flex;
@@ -152,7 +163,7 @@ main {
       flex-flow: row wrap;
       align-items: center;
       width: 100%;
-      max-width: 1200px;
+      // max-width: 1200px;
       margin: 0 auto;
 
       .sizer {

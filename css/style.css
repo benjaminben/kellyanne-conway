@@ -97,7 +97,8 @@ main section {
           overflow: scroll; }
           main section#makeup .carousel-cont ul.slider li {
             width: 16%; }
-  main section#clip_1 {
+  main section.clip {
+    background-repeat: no-repeat;
     padding: 100px 0;
     text-align: center;
     display: flex;
@@ -105,30 +106,35 @@ main section {
     flex-flow: row wrap;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto; }
-    main section#clip_1 .sizer {
+    main section.clip#clip_1 {
+      background-image: url("../assets/clip_1.jpg");
+      background-position: 50%; }
+    main section.clip#clip_2 {
+      background-image: url("../assets/clip_2.jpg");
+      background-position: 50%; }
+    main section.clip .sizer {
       width: 90%;
       max-width: 700px;
       display: inline-block;
       vertical-align: middle; }
-    main section#clip_1 .vid-cont {
+    main section.clip .vid-cont {
       width: 100%;
       position: relative;
       padding-bottom: 62%; }
-      main section#clip_1 .vid-cont iframe {
+      main section.clip .vid-cont iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%; }
-    main section#clip_1 .text-cont {
+    main section.clip .text-cont {
       display: inline-block;
       vertical-align: middle;
       text-align: left;
       width: 90%;
       max-width: 300px; }
-      main section#clip_1 .text-cont .title {
+      main section.clip .text-cont .title {
         font-size: 3em;
         font-style: italic;
         margin: 0; }
