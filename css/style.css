@@ -76,6 +76,7 @@ main section {
       position: relative; }
       main section#makeup .carousel-cont button {
         display: inline-block;
+        cursor: pointer;
         position: absolute;
         top: 50%;
         -webkit-transform: translate(0, -50%);
