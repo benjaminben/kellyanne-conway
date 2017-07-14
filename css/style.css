@@ -12,7 +12,9 @@ main section {
     font-size: 3em;
     font-family: 'Didot';
     font-style: italic;
-    letter-spacing: 0.2em; }
+    letter-spacing: 0.133em;
+    position: relative;
+    z-index: 10; }
   main section .text-cont .main {
     font-size: 1em;
     line-height: 1.66em; }
@@ -26,46 +28,57 @@ main section {
     height: 100px;
     background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
     background: linear-gradient(transparent, black); }
-  main section#first_look {
+  main section#first_look .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url("../assets/first_look_crop.jpg");
     background-size: 100%;
     background-repeat: no-repeat; }
-    main section#first_look .title {
-      text-align: center;
-      margin: 0;
-      position: absolute;
+  main section#first_look .title {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  main section#first_look .sizer {
+    width: 50%;
+    margin: 0 auto;
+    padding: 120px 0; }
+    main section#first_look .sizer .vid-cont {
+      position: relative;
       width: 100%;
-      height: 120px;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center; }
-    main section#first_look .sizer {
-      width: 50%;
-      margin: 0 auto;
-      padding: 120px 0; }
-      main section#first_look .sizer .vid-cont {
-        position: relative;
+      padding-bottom: 62%; }
+      main section#first_look .sizer .vid-cont iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        padding-bottom: 62%; }
-        main section#first_look .sizer .vid-cont iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%; }
+        height: 100%; }
   main section#makeup {
-    background-image: url("../assets/makeupBG.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
     padding-bottom: 80px;
     width: 100%;
     overflow: hidden; }
+    main section#makeup .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("../assets/makeupBG.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat; }
     main section#makeup .title {
       text-align: center;
       font-style: italic; }
@@ -84,13 +97,27 @@ main section {
         width: 40px;
         background: none;
         border: none;
-        z-index: 10; }
+        z-index: 10;
+        -webkit-transition: opacity 0.33s ease;
+        transition: opacity 0.33s ease;
+        outline: none; }
         main section#makeup .carousel-cont button:first-of-type {
           right: 105%; }
+          main section#makeup .carousel-cont button:first-of-type:hover, main section#makeup .carousel-cont button:first-of-type:active {
+            -webkit-animation: back-btn-wiggle 0.33s;
+                    animation: back-btn-wiggle 0.33s; }
         main section#makeup .carousel-cont button:last-of-type {
           left: 105%; }
+          main section#makeup .carousel-cont button:last-of-type:hover, main section#makeup .carousel-cont button:last-of-type:active {
+            -webkit-animation: next-btn-wiggle 0.33s;
+                    animation: next-btn-wiggle 0.33s; }
         main section#makeup .carousel-cont button svg {
           width: 100%; }
+        main section#makeup .carousel-cont button.passive {
+          cursor: default;
+          opacity: 0.5;
+          -webkit-animation: none !important;
+                  animation: none !important; }
       main section#makeup .carousel-cont .wrapper {
         display: block;
         overflow: hidden; }
@@ -122,7 +149,6 @@ main section {
             width: 20%;
             cursor: pointer; }
   main section.clip {
-    background-repeat: no-repeat;
     padding: 100px 0;
     text-align: center;
     display: -webkit-box;
@@ -139,12 +165,26 @@ main section {
             align-items: center;
     width: 100%;
     margin: 0 auto; }
-    main section.clip#clip_1 {
+    main section.clip#clip_1 .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-image: url("../assets/clip_1.jpg");
-      background-position: 50%; }
-    main section.clip#clip_2 {
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-repeat: no-repeat; }
+    main section.clip#clip_2 .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-image: url("../assets/clip_2.jpg");
-      background-position: 50%; }
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-repeat: no-repeat; }
     main section.clip .sizer {
       width: 60%;
       min-width: 550px;
@@ -170,6 +210,16 @@ main section {
       padding: 0 20px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
+      main section.clip .text-cont .bg {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: auto 100%;
+        background-position: 60% center;
+        background-repeat: no-repeat; }
       main section.clip .text-cont .title {
         font-style: italic;
         margin: 0; }
@@ -290,6 +340,8 @@ main section {
     display: block;
     background-image: none !important;
     padding: 80px 0 0; }
+    main section.clip > .bg {
+      display: none; }
     main section.clip:after {
       display: none; }
     main section.clip .sizer {
@@ -306,10 +358,9 @@ main section {
       padding: 60px 5%;
       margin: 0px auto 0;
       display: block;
-      max-width: none;
-      background-size: auto 100%;
-      background-position: 60% center;
-      background-repeat: no-repeat; }
+      max-width: none; }
+      main section.clip .text-cont .bg {
+        display: block; }
       main section.clip .text-cont:before, main section.clip .text-cont:after {
         content: '';
         display: block;
@@ -353,6 +404,38 @@ main section {
       display: block;
       max-width: none;
       margin-top: 30px; } }
+
+@-webkit-keyframes back-btn-wiggle {
+  50% {
+    -webkit-transform: translate(-10%, -50%);
+            transform: translate(-10%, -50%); }
+  100% {
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%); } }
+
+@keyframes back-btn-wiggle {
+  50% {
+    -webkit-transform: translate(-10%, -50%);
+            transform: translate(-10%, -50%); }
+  100% {
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%); } }
+
+@-webkit-keyframes next-btn-wiggle {
+  50% {
+    -webkit-transform: translate(10%, -50%);
+            transform: translate(10%, -50%); }
+  100% {
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%); } }
+
+@keyframes next-btn-wiggle {
+  50% {
+    -webkit-transform: translate(10%, -50%);
+            transform: translate(10%, -50%); }
+  100% {
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%); } }
 
 @font-face {
   font-family: 'Didot';

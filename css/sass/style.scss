@@ -22,7 +22,9 @@ main {
       font-size: 3em;
       font-family: 'Didot';
       font-style: italic;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.133em;
+      position: relative;
+      z-index: 10;
     }
 
     .text-cont {
@@ -44,9 +46,13 @@ main {
 
     &#first_look {
       // height: 600px;
-      background-image: url($first_look);
-      background-size: 100%;
-      background-repeat: no-repeat;
+      .bg {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url($first_look);
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
 
       .title {
         text-align: center;
@@ -83,9 +89,14 @@ main {
     }
 
     &#makeup {
-      background-image: url($makeup);
-      background-size: 100%;
-      background-repeat: no-repeat;
+      .bg {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url($makeup);
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+
       padding-bottom: 80px;
       width: 100%;
       overflow: hidden;
@@ -111,17 +122,31 @@ main {
           background: none;
           border: none;
           z-index: 10;
+          transition: opacity 0.33s ease;
+          outline: none;
 
           &:first-of-type {
             right: 105%;
+            &:hover, &:active {
+              animation: back-btn-wiggle 0.33s;
+            }
           }
 
           &:last-of-type {
             left: 105%;
+            &:hover, &:active {
+              animation: next-btn-wiggle 0.33s;
+            }
           }
 
           svg {
             width: 100%;
+          }
+
+          &.passive {
+            cursor: default;
+            opacity: 0.5;
+            animation: none!important;
           }
         }
 
@@ -172,15 +197,22 @@ main {
 
 
     &.clip {
-      &#clip_1 {
+      &#clip_1 .bg {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
         background-image: url($clip_1);
-        background-position: 50%;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-repeat: no-repeat;
       }
-      &#clip_2 {
+      &#clip_2 .bg {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
         background-image: url($clip_2);
-        background-position: 50%;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-repeat: no-repeat;
       }
-      background-repeat: no-repeat;
       padding: 100px 0;
       text-align: center;
       display: flex;
@@ -214,6 +246,14 @@ main {
       }
 
       .text-cont {
+        .bg {
+          display: none;
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background-size: auto 100%;
+          background-position: 60% center;
+          background-repeat: no-repeat;
+        }
         display: inline-block;
         vertical-align: middle;
         text-align: left;
@@ -390,6 +430,10 @@ main {
         background-image: none!important;
         padding: 80px 0 0;
 
+        > .bg {
+          display: none;
+        }
+
         &:after {
           display: none;
         }
@@ -412,9 +456,10 @@ main {
           margin: 0px auto 0;
           display: block;
           max-width: none;
-          background-size: auto 100%;
-          background-position: 60% center;
-          background-repeat: no-repeat;
+
+          .bg {
+            display: block;
+          }
 
           &:before, &:after {
             content: '';
@@ -479,6 +524,25 @@ main {
         }
       }
     }
+  }
+}
+
+
+@keyframes back-btn-wiggle {
+  50% {
+    transform: translate(-10%, -50%)
+  }
+  100% {
+    transform: translate(0%, -50%)
+  }
+}
+
+@keyframes next-btn-wiggle {
+  50% {
+    transform: translate(10%, -50%)
+  }
+  100% {
+    transform: translate(0%, -50%)
   }
 }
 
