@@ -138,3 +138,22 @@ main section {
         font-size: 3em;
         font-style: italic;
         margin: 0; }
+  main section#directors {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: center; }
+    main section#directors img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 90%;
+      max-width: 700px; }
+    main section#directors .text-cont {
+      display: inline-block;
+      vertical-align: middle;
+      width: 90%;
+      max-width: 300px; }
+      main section#directors .text-cont .title {
+        font-size: 3em;
+        font-style: italic;
+        margin: 0; }
