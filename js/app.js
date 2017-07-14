@@ -1,4 +1,8 @@
 (function() {
+  function lerp (start, end, amt){
+    return (1-amt)*start+amt*end
+  }
+
   var raf = window.requestAnimationFrame
 
   var carousel = document.querySelector('#makeup .carousel')
@@ -21,27 +25,9 @@
       carousel.slider.scrollWidth - carousel.slider.getBoundingClientRect().width
     )
 
-    var forward = target > carousel.slideIndex
-
-    var slide = function() {
-      if (forward) {
-        if (carousel.slider.scrollLeft < scrollTo) {
-          carousel.slider.scrollLeft += 10
-          scrollFrame = raf(slide)
-        } else {
-          carousel.slider.scrollLeft = scrollTo
-        }
-      } else {
-        if (carousel.slider.scrollLeft > scrollTo) {
-          carousel.slider.scrollLeft -= 10
-          scrollFrame = raf(slide)
-        } else {
-          carousel.slider.scrollLeft = scrollTo
-        }
-      }
-    }
-
-    slide()
+    TweenMax.to(carousel.slider, 0.33, {
+      scrollTo: {x: scrollTo}
+    })
   }
   carousel.slider.addEventListener('touchstart', function() {
     window.cancelAnimationFrame(scrollFrame)
