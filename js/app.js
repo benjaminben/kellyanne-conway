@@ -12,6 +12,7 @@
   carousel.slider.slides = Array.from(carousel.slider.getElementsByTagName('li'))
 
   var scrollTo
+  var scrollFrame
   var slideSlider = function(target) {
     scrollTo = Math.min(
       document.querySelector(
@@ -42,6 +43,9 @@
 
     slide()
   }
+  carousel.slider.addEventListener('touchstart', function() {
+    window.cancelAnimationFrame(scrollFrame)
+  })
 
   var shiftCarousel = function(target) {
     slideSlider(target)
