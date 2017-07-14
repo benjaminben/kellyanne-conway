@@ -147,6 +147,11 @@ main section {
         main section#makeup .carousel-cont ul.slider {
           width: 100%;
           overflow: scroll; }
+          main section#makeup .carousel-cont ul.slider::-webkit-scrollbar {
+            width: 0px;
+            /* remove scrollbar space */
+            background: transparent;
+            /* optional: just make scrollbar invisible */ }
           main section#makeup .carousel-cont ul.slider li {
             width: 20%;
             cursor: pointer; }

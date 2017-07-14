@@ -187,6 +187,11 @@ main {
             width: 100%;
             overflow: scroll;
 
+            &::-webkit-scrollbar {
+                width: 0px;  /* remove scrollbar space */
+                background: transparent;  /* optional: just make scrollbar invisible */
+            }
+
             li {
               width: 20%;
               cursor: pointer;
@@ -414,13 +419,6 @@ main {
               right: 1%;
             }
           }
-          // ul {
-          //   &.slider {
-          //     li {
-          //       width: 20%;
-          //     }
-          //   }
-          // }
         }
       }
 

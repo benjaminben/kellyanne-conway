@@ -1,4 +1,6 @@
 (function() {
+  var raf = window.requestAnimationFrame
+
   var carousel = document.querySelector('#makeup .carousel')
   carousel.main = carousel.querySelector('#makeup .carousel .main')
   carousel.slider = document.querySelector('#makeup .carousel-cont .slider')
@@ -9,35 +11,56 @@
   carousel.main.slides = Array.from(carousel.main.getElementsByTagName('li'))
   carousel.slider.slides = Array.from(carousel.slider.getElementsByTagName('li'))
 
-  var shiftCarousel = function(target) {
-    carousel.slideIndex = target
-    if (carousel.slideIndex === 0) {
-      carousel.backBtn.className += ' passive'
-    } else if (carousel.slideIndex === carousel.main.slides.length - 1) {
-      carousel.nextBtn.className += ' passive'
-    } else {
-      if (!!carousel.backBtn.className.match(/passive/)) {
-        carousel.backBtn.className = carousel.backBtn.className.replace(/passive/, '')
-      }
-      if (!!carousel.nextBtn.className.match(/passive/)) {
-        carousel.nextBtn.className = carousel.nextBtn.className.replace(/passive/, '')
+  var scrollTo
+  var slideSlider = function(target) {
+    scrollTo = Math.min(
+      document.querySelector(
+        '.slider li[data-index="'+target+'"]'
+      ).offsetLeft,
+      carousel.slider.scrollWidth - carousel.slider.getBoundingClientRect().width
+    )
+
+    var forward = target > carousel.slideIndex
+
+    var slide = function() {
+      if (forward) {
+        if (carousel.slider.scrollLeft < scrollTo) {
+          carousel.slider.scrollLeft += 10
+          scrollFrame = raf(slide)
+        } else {
+          carousel.slider.scrollLeft = scrollTo
+        }
+      } else {
+        if (carousel.slider.scrollLeft > scrollTo) {
+          carousel.slider.scrollLeft -= 10
+          scrollFrame = raf(slide)
+        } else {
+          carousel.slider.scrollLeft = scrollTo
+        }
       }
     }
+
+    slide()
+  }
+
+  var shiftCarousel = function(target) {
+    slideSlider(target)
+    carousel.slideIndex = target
     carousel.main.style.transform = 'translate(-' + (target * 100) + '%, 0)';
   }
 
   carousel.backBtn.addEventListener('click', function() {
     if (carousel.slideIndex === 0) {
-      return
+      return shiftCarousel(carousel.main.slides.length - 1)
     }
     shiftCarousel(carousel.slideIndex - 1)
   })
 
   carousel.nextBtn.addEventListener('click', function() {
     if (carousel.slideIndex === carousel.main.slides.length - 1) {
-      return
+      return shiftCarousel(0)
     }
-    shiftCarousel(carousel.slideIndex + 1)
+    return shiftCarousel(carousel.slideIndex + 1)
   })
 
   carousel.slider.slides.forEach(function(slide, index) {
