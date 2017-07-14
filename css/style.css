@@ -83,7 +83,8 @@ main section {
       background-repeat: no-repeat; }
     main section#makeup .title {
       text-align: center;
-      font-style: italic; }
+      font-style: italic;
+      margin: 0 0 1em; }
     main section#makeup .carousel-cont {
       width: 90%;
       max-width: 600px;
@@ -335,7 +336,7 @@ main section {
     line-height: 13vw; }
   main section#makeup .title {
     margin: 0;
-    padding: 20vw 0 8vw; }
+    padding: 20vw 0 1em; }
   main section#makeup .carousel-cont button {
     top: 44%; }
     main section#makeup .carousel-cont button:first-of-type {

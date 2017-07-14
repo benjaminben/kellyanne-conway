@@ -1,8 +1,4 @@
 (function() {
-  function lerp (start, end, amt){
-    return (1-amt)*start+amt*end
-  }
-
   var raf = window.requestAnimationFrame
 
   var carousel = document.querySelector('#makeup .carousel')
@@ -29,6 +25,7 @@
       scrollTo: {x: scrollTo}
     })
   }
+
   carousel.slider.addEventListener('touchstart', function() {
     window.cancelAnimationFrame(scrollFrame)
   })
