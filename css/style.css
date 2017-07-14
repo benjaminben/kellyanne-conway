@@ -3,15 +3,16 @@ body, html {
 
 body {
   background: black;
-  color: white; }
+  color: white;
+  font-family: "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 main section {
   position: relative; }
   main section .title {
-    text-transform: uppercase;
-    font-size: 2.33em;
+    font-size: 3em;
+    font-family: 'Didot';
     font-style: italic;
-    letter-spacing: 0.1em; }
+    letter-spacing: 0.2em; }
   main section .text-cont .main {
     font-size: 1em;
     line-height: 1.66em; }
@@ -34,7 +35,7 @@ main section {
       margin: 0;
       position: absolute;
       width: 100%;
-      height: 100px;
+      height: 120px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -57,7 +58,7 @@ main section {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      padding: 100px 0; }
+      padding: 120px 0; }
       main section#first_look .sizer .vid-cont {
         position: relative;
         width: 100%;
@@ -72,23 +73,33 @@ main section {
     background-image: url("../assets/makeupBG.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    padding-bottom: 80px; }
+    padding-bottom: 80px;
+    width: 100%;
+    overflow: hidden; }
     main section#makeup .title {
       text-align: center;
       font-style: italic; }
     main section#makeup .carousel-cont {
-      width: 80%;
+      width: 90%;
       max-width: 600px;
       margin: 0 auto;
       position: relative; }
       main section#makeup .carousel-cont button {
         display: inline-block;
         position: absolute;
-        top: 50%; }
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+        width: 40px;
+        background: none;
+        border: none;
+        z-index: 10; }
         main section#makeup .carousel-cont button:first-of-type {
           right: 105%; }
         main section#makeup .carousel-cont button:last-of-type {
           left: 105%; }
+        main section#makeup .carousel-cont button svg {
+          width: 100%; }
       main section#makeup .carousel-cont .wrapper {
         display: block;
         overflow: hidden; }
@@ -117,7 +128,7 @@ main section {
           width: 100%;
           overflow: scroll; }
           main section#makeup .carousel-cont ul.slider li {
-            width: 16%;
+            width: 20%;
             cursor: pointer; }
   main section.clip {
     background-repeat: no-repeat;
@@ -199,6 +210,7 @@ main section {
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
       main section#directors .text-cont .title {
+        font-size: 2.33em;
         font-style: italic;
         margin: 0; }
   main section#coming_soon {
@@ -253,11 +265,36 @@ main section {
               align-items: center; }
       main section#coming_soon .text-cont .title {
         margin: 0;
-        padding: 100px 0; }
+        padding: 100px 0;
+        text-transform: uppercase; }
 
 @media screen and (max-width: 860px) {
   main section .title {
     font-size: 7vw; }
+  main section#first_look .sizer {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0 100px; }
+    main section#first_look .sizer .vid-cont {
+      padding-bottom: 68%; }
+  main section#first_look .title {
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    height: 50vw;
+    font-size: 10vw;
+    line-height: 13vw; }
+  main section#makeup .title {
+    margin: 0;
+    padding: 20vw 0 8vw; }
+  main section#makeup .carousel-cont button {
+    top: 44%; }
+    main section#makeup .carousel-cont button:first-of-type {
+      right: auto;
+      left: 1%; }
+    main section#makeup .carousel-cont button:last-of-type {
+      left: auto;
+      right: 1%; }
   main section.clip {
     display: block;
     background-image: none !important;
@@ -270,6 +307,8 @@ main section {
       width: 90%;
       max-width: none;
       min-width: auto; }
+      main section.clip .sizer .vid-cont {
+        padding-bottom: 68%; }
     main section.clip .text-cont {
       position: relative;
       width: 100%;
@@ -299,8 +338,10 @@ main section {
       main section.clip .text-cont .title, main section.clip .text-cont .main {
         position: relative;
         z-index: 1; }
-    main section.clip#clip_1 .text-cont {
-      background-image: url("../assets/clip_1.jpg"); }
+    main section.clip#clip_1 {
+      padding: 0; }
+      main section.clip#clip_1 .text-cont {
+        background-image: url("../assets/clip_1.jpg"); }
     main section.clip#clip_2 .text-cont {
       background-image: url("../assets/clip_2.jpg"); }
   main section#directors {
@@ -321,5 +362,26 @@ main section {
       display: block;
       max-width: none;
       margin-top: 30px; } }
+
+@font-face {
+  font-family: 'Didot';
+  src: url("./assets/fonts/Didot-Italic.eot");
+  src: url("./assets/fonts/Didot-Italic.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Didot-Italic.woff") format("woff"), url("./assets/fonts/Didot-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Didot';
+  src: url("./assets/fonts/Didot-Bold.eot");
+  src: url("./assets/fonts/Didot-Bold.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Didot-Bold.woff") format("woff"), url("./assets/fonts/Didot-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Didot';
+  src: url("./assets/fonts/Didot.eot");
+  src: url("./assets/fonts/Didot.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Didot.woff") format("woff"), url("./assets/fonts/Didot.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 
 /*# sourceMappingURL=style.css.map */

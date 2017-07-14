@@ -11,6 +11,7 @@ body, html {
 body {
   background: black;
   color: white;
+  font-family: "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 main {
@@ -18,10 +19,10 @@ main {
     position: relative;
 
     .title {
-      text-transform: uppercase;
-      font-size: 2.33em;
+      font-size: 3em;
+      font-family: 'Didot';
       font-style: italic;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
     }
 
     .text-cont {
@@ -52,7 +53,7 @@ main {
         margin: 0;
         position: absolute;
         width: 100%;
-        height: 100px;
+        height: 120px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -64,7 +65,7 @@ main {
         display: flex;
         flex-flow: column;
         justify-content: center;
-        padding: 100px 0;
+        padding: 120px 0;
 
         .vid-cont {
           position: relative;
@@ -86,6 +87,8 @@ main {
       background-size: 100%;
       background-repeat: no-repeat;
       padding-bottom: 80px;
+      width: 100%;
+      overflow: hidden;
 
       .title {
         text-align: center;
@@ -93,7 +96,7 @@ main {
       }
 
       .carousel-cont {
-        width: 80%;
+        width: 90%;
         max-width: 600px;
         margin: 0 auto;
         position: relative;
@@ -102,6 +105,11 @@ main {
           display: inline-block;
           position: absolute;
           top: 50%;
+          transform: translate(0, -50%);
+          width: 40px;
+          background: none;
+          border: none;
+          z-index: 10;
 
           &:first-of-type {
             right: 105%;
@@ -109,6 +117,10 @@ main {
 
           &:last-of-type {
             left: 105%;
+          }
+
+          svg {
+            width: 100%;
           }
         }
 
@@ -149,7 +161,7 @@ main {
             overflow: scroll;
 
             li {
-              width: 16%;
+              width: 20%;
               cursor: pointer;
             }
           }
@@ -244,6 +256,7 @@ main {
         // flex: 1;
 
         .title {
+          font-size: 2.33em;
           font-style: italic;
           margin: 0;
         }
@@ -309,6 +322,7 @@ main {
         .title {
           margin: 0;
           padding: 100px 0;
+          text-transform: uppercase;
         }
       }
     }
@@ -321,6 +335,53 @@ main {
 
       .title {
         font-size: 7vw;
+      }
+
+      &#first_look {
+        .sizer {
+          width: 90%;
+          margin: 0 auto;
+          padding: 0 0 100px;
+
+          .vid-cont {
+            padding-bottom: 68%;
+          }
+        }
+        .title {
+          position: relative;
+          width: 30%;
+          margin: 0 auto;
+          height: 50vw;
+          font-size: 10vw;
+          line-height: 13vw;
+        }
+      }
+
+      &#makeup {
+        .title {
+          margin: 0;
+          padding: 20vw 0 8vw;
+        }
+        .carousel-cont {
+          button {
+            top: 44%;
+            &:first-of-type {
+              right: auto;
+              left: 1%;
+            }
+            &:last-of-type {
+              left: auto;
+              right: 1%;
+            }
+          }
+          // ul {
+          //   &.slider {
+          //     li {
+          //       width: 20%;
+          //     }
+          //   }
+          // }
+        }
       }
 
       &.clip {
@@ -338,6 +399,10 @@ main {
           width: 90%;
           max-width: none;
           min-width: auto;
+
+          .vid-cont {
+            padding-bottom: 68%;
+          }
         }
         .text-cont {
           position: relative;
@@ -377,6 +442,7 @@ main {
         }
 
         &#clip_1 {
+          padding: 0;
           .text-cont {
             background-image: url($clip_1)
           }
@@ -414,3 +480,34 @@ main {
     }
   }
 }
+
+@font-face {
+  font-family: 'Didot';
+  src: url('./assets/fonts/Didot-Italic.eot');
+  src: url('./assets/fonts/Didot-Italic.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/Didot-Italic.woff') format('woff'),
+    url('./assets/fonts/Didot-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src: url('./assets/fonts/Didot-Bold.eot');
+  src: url('./assets/fonts/Didot-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/Didot-Bold.woff') format('woff'),
+    url('./assets/fonts/Didot-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src: url('./assets/fonts/Didot.eot');
+  src: url('./assets/fonts/Didot.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/Didot.woff') format('woff'),
+    url('./assets/fonts/Didot.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
