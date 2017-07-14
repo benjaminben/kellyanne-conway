@@ -27,7 +27,7 @@ main section {
     background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
     background: linear-gradient(transparent, black); }
   main section#first_look {
-    background-image: url("../assets/first_look.jpg");
+    background-image: url("../assets/first_look_crop.jpg");
     background-size: 100%;
     background-repeat: no-repeat; }
     main section#first_look .title {
@@ -48,16 +48,6 @@ main section {
     main section#first_look .sizer {
       width: 50%;
       margin: 0 auto;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-flow: column;
-              flex-flow: column;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
       padding: 120px 0; }
       main section#first_look .sizer .vid-cont {
         position: relative;
@@ -274,14 +264,14 @@ main section {
   main section#first_look .sizer {
     width: 90%;
     margin: 0 auto;
-    padding: 0 0 100px; }
+    padding: 1em 0 100px; }
     main section#first_look .sizer .vid-cont {
       padding-bottom: 68%; }
   main section#first_look .title {
     position: relative;
     width: 30%;
     margin: 0 auto;
-    height: 50vw;
+    height: 46vw;
     font-size: 10vw;
     line-height: 13vw; }
   main section#makeup .title {

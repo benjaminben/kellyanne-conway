@@ -1,4 +1,4 @@
-$first_look: '../assets/first_look.jpg';
+$first_look: '../assets/first_look_crop.jpg';
 $makeup: '../assets/makeupBG.jpg';
 $clip_1: '../assets/clip_1.jpg';
 $clip_2: '../assets/clip_2.jpg';
@@ -62,9 +62,9 @@ main {
       .sizer {
         width: 50%;
         margin: 0 auto;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
+        // display: flex;
+        // flex-flow: column;
+        // justify-content: center;
         padding: 120px 0;
 
         .vid-cont {
@@ -341,7 +341,7 @@ main {
         .sizer {
           width: 90%;
           margin: 0 auto;
-          padding: 0 0 100px;
+          padding: 1em 0 100px;
 
           .vid-cont {
             padding-bottom: 68%;
@@ -351,7 +351,7 @@ main {
           position: relative;
           width: 30%;
           margin: 0 auto;
-          height: 50vw;
+          height: 46vw;
           font-size: 10vw;
           line-height: 13vw;
         }
