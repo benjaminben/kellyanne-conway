@@ -258,7 +258,7 @@ main section {
         margin: 0; }
   main section#coming_soon {
     width: 100%;
-    padding-top: 2em; }
+    margin-top: 2em; }
     main section#coming_soon:after {
       display: none; }
     main section#coming_soon .bg-cont {
