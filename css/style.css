@@ -15,9 +15,11 @@ main section {
     letter-spacing: 0.133em;
     position: relative;
     z-index: 10; }
-  main section .text-cont .main {
-    font-size: 1em;
-    line-height: 1.66em; }
+  main section .text-cont {
+    position: relative; }
+    main section .text-cont .main {
+      font-size: 1em;
+      line-height: 1.66em; }
   main section:after {
     content: '';
     display: block;
@@ -255,12 +257,11 @@ main section {
         font-style: italic;
         margin: 0; }
   main section#coming_soon {
-    width: 100%; }
+    width: 100%;
+    padding-top: 2em; }
     main section#coming_soon:after {
       display: none; }
     main section#coming_soon .bg-cont {
-      height: 600px;
-      max-height: 66vh;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -312,10 +313,12 @@ main section {
 @media screen and (max-width: 860px) {
   main section .title {
     font-size: 7vw; }
+  main section#first_look:after {
+    display: none; }
   main section#first_look .sizer {
     width: 90%;
     margin: 0 auto;
-    padding: 1em 0 100px; }
+    padding: 1em 0 20px; }
     main section#first_look .sizer .vid-cont {
       padding-bottom: 68%; }
   main section#first_look .title {
