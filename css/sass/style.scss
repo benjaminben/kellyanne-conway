@@ -2,6 +2,7 @@ $first_look: '../assets/first_look_crop.jpg';
 $makeup: '../assets/makeupBG.jpg';
 $clip_1: '../assets/clip_1.jpg';
 $clip_2: '../assets/clip_2.jpg';
+$clip_3: '../assets/clip_3.jpg';
 $coming_soon: '../assets/coming_soon.jpg';
 
 body, html {
@@ -29,9 +30,11 @@ main {
 
     .text-cont {
       position: relative;
+      z-index: 1;
+
       .main {
         font-size: 1em;
-        line-height: 1.66em;
+        line-height: 2em;
       }
     }
 
@@ -46,7 +49,10 @@ main {
     }
 
     &#first_look {
-      // height: 600px;
+      &:after {
+        height: 40px;
+      }
+
       .bg {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
@@ -69,15 +75,14 @@ main {
       .sizer {
         width: 50%;
         margin: 0 auto;
-        // display: flex;
-        // flex-flow: column;
-        // justify-content: center;
-        padding: 120px 0;
+        padding: 120px 0 40px;
+        position: relative;
+        z-index: 2;
 
         .vid-cont {
           position: relative;
           width: 100%;
-          padding-bottom: 62%;
+          padding-bottom: 64%;
 
           iframe {
             position: absolute;
@@ -105,7 +110,18 @@ main {
       .title {
         text-align: center;
         font-style: italic;
-        margin: 0 0 1em;
+        margin: 0.33em 0;
+      }
+
+
+      p.main {
+        width: 90%;
+        position: relative;
+        max-width: 550px;
+        line-height: 2em;
+        margin: 0 auto;
+        padding-bottom: 2em;
+
       }
 
       .carousel-cont {
@@ -220,6 +236,14 @@ main {
         background-position-y: 50%;
         background-repeat: no-repeat;
       }
+      &#clip_3 .bg {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url($clip_3);
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-repeat: no-repeat;
+      }
       padding: 100px 0;
       text-align: center;
       display: flex;
@@ -227,14 +251,12 @@ main {
       flex-flow: row wrap;
       align-items: center;
       width: 100%;
-      // max-width: 1200px;
       margin: 0 auto;
 
       .sizer {
         width: 60%;
         min-width: 550px;
         max-width: 700px;
-        // flex: 2 1 400px;
         display: inline-block;
         vertical-align: middle;
       }
@@ -242,7 +264,7 @@ main {
       .vid-cont {
         width: 100%;
         position: relative;
-        padding-bottom: 62%;
+        padding-bottom: 62.5%;
 
         iframe {
           position: absolute;
@@ -268,8 +290,6 @@ main {
         max-width: 320px;
         padding: 0 20px;
         box-sizing: border-box;
-        // flex: 1 1 300px;
-        // margin-left: 2em;
 
         .title {
           font-style: italic;
@@ -291,7 +311,6 @@ main {
         width: 60%;
         min-width: 550px;
         max-width: 700px;
-        // flex: 2;
       }
 
       .text-cont {
@@ -301,10 +320,9 @@ main {
         max-width: 300px;
         padding: 0 20px;
         box-sizing: border-box;
-        // flex: 1;
 
         .title {
-          font-size: 2.33em;
+          font-size: 3em;
           font-style: italic;
           margin: 0;
         }
@@ -357,8 +375,6 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        // height: 600px;
-        // max-height: 66vh;
 
         .title {
           margin: 0;
@@ -375,7 +391,13 @@ main {
     section {
 
       .title {
-        font-size: 7vw;
+        font-size: 7vw!important;
+      }
+
+      .text-cont {
+        .main {
+          font-size: 0.9em;
+        }
       }
 
       &#first_look {
@@ -404,9 +426,10 @@ main {
       }
 
       &#makeup {
+        padding: 60px 0 80px;
+
         .title {
-          margin: 0;
-          padding: 20vw 0 1em;
+          padding-top: 40;
         }
         .carousel-cont {
           button {
@@ -424,9 +447,9 @@ main {
       }
 
       &.clip {
-        display: block;
+        display: flex;
         background-image: none!important;
-        padding: 80px 0 0;
+        padding: 0;
 
         > .bg {
           display: none;
@@ -442,6 +465,8 @@ main {
           width: 90%;
           max-width: none;
           min-width: auto;
+          order: 2;
+          padding-bottom: 2em;
 
           .vid-cont {
             padding-bottom: 68%;
@@ -450,7 +475,7 @@ main {
         .text-cont {
           position: relative;
           width: 100%;
-          padding: 60px 5%;
+          padding: 60px 5% 1em;
           margin: 0px auto 0;
           display: block;
           max-width: none;
@@ -485,26 +510,25 @@ main {
           }
         }
 
-        &#clip_1 {
-          padding: 0;
-          .text-cont {
-            background-image: url($clip_1)
-          }
-        }
 
-        &#clip_2 {
+
+        &#clip_3 {
           .text-cont {
-            background-image: url($clip_2)
+            h1 {
+              text-align: right;
+            }
           }
         }
       }
 
       &#directors {
         display: block;
-        padding-bottom: 0px;
+        padding: 40px 0;
+
         &:after {
           display: none;
         }
+
         img {
           display: block;
           width: 90%;

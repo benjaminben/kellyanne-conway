@@ -16,10 +16,11 @@ main section {
     position: relative;
     z-index: 10; }
   main section .text-cont {
-    position: relative; }
+    position: relative;
+    z-index: 1; }
     main section .text-cont .main {
       font-size: 1em;
-      line-height: 1.66em; }
+      line-height: 2em; }
   main section:after {
     content: '';
     display: block;
@@ -30,6 +31,8 @@ main section {
     height: 100px;
     background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
     background: linear-gradient(transparent, black); }
+  main section#first_look:after {
+    height: 40px; }
   main section#first_look .bg {
     position: absolute;
     top: 0;
@@ -57,11 +60,13 @@ main section {
   main section#first_look .sizer {
     width: 50%;
     margin: 0 auto;
-    padding: 120px 0; }
+    padding: 120px 0 40px;
+    position: relative;
+    z-index: 2; }
     main section#first_look .sizer .vid-cont {
       position: relative;
       width: 100%;
-      padding-bottom: 62%; }
+      padding-bottom: 64%; }
       main section#first_look .sizer .vid-cont iframe {
         position: absolute;
         top: 0;
@@ -84,7 +89,14 @@ main section {
     main section#makeup .title {
       text-align: center;
       font-style: italic;
-      margin: 0 0 1em; }
+      margin: 0.33em 0; }
+    main section#makeup p.main {
+      width: 90%;
+      position: relative;
+      max-width: 550px;
+      line-height: 2em;
+      margin: 0 auto;
+      padding-bottom: 2em; }
     main section#makeup .carousel-cont {
       width: 90%;
       max-width: 600px;
@@ -193,6 +205,16 @@ main section {
       background-position-x: 50%;
       background-position-y: 50%;
       background-repeat: no-repeat; }
+    main section.clip#clip_3 .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("../assets/clip_3.jpg");
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-repeat: no-repeat; }
     main section.clip .sizer {
       width: 60%;
       min-width: 550px;
@@ -202,7 +224,7 @@ main section {
     main section.clip .vid-cont {
       width: 100%;
       position: relative;
-      padding-bottom: 62%; }
+      padding-bottom: 62.5%; }
       main section.clip .vid-cont iframe {
         position: absolute;
         top: 0;
@@ -259,7 +281,7 @@ main section {
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
       main section#directors .text-cont .title {
-        font-size: 2.33em;
+        font-size: 3em;
         font-style: italic;
         margin: 0; }
   main section#coming_soon {
@@ -318,7 +340,9 @@ main section {
 
 @media screen and (max-width: 860px) {
   main section .title {
-    font-size: 7vw; }
+    font-size: 7vw !important; }
+  main section .text-cont .main {
+    font-size: 0.9em; }
   main section#first_look:after {
     display: none; }
   main section#first_look .sizer {
@@ -334,21 +358,24 @@ main section {
     height: 46vw;
     font-size: 10vw;
     line-height: 13vw; }
-  main section#makeup .title {
-    margin: 0;
-    padding: 20vw 0 1em; }
-  main section#makeup .carousel-cont button {
-    top: 44%; }
-    main section#makeup .carousel-cont button:first-of-type {
-      right: auto;
-      left: 1%; }
-    main section#makeup .carousel-cont button:last-of-type {
-      left: auto;
-      right: 1%; }
+  main section#makeup {
+    padding: 60px 0 80px; }
+    main section#makeup .title {
+      padding-top: 40; }
+    main section#makeup .carousel-cont button {
+      top: 44%; }
+      main section#makeup .carousel-cont button:first-of-type {
+        right: auto;
+        left: 1%; }
+      main section#makeup .carousel-cont button:last-of-type {
+        left: auto;
+        right: 1%; }
   main section.clip {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     background-image: none !important;
-    padding: 80px 0 0; }
+    padding: 0; }
     main section.clip > .bg {
       display: none; }
     main section.clip:after {
@@ -358,13 +385,17 @@ main section {
       margin: 0 auto;
       width: 90%;
       max-width: none;
-      min-width: auto; }
+      min-width: auto;
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2;
+      padding-bottom: 2em; }
       main section.clip .sizer .vid-cont {
         padding-bottom: 68%; }
     main section.clip .text-cont {
       position: relative;
       width: 100%;
-      padding: 60px 5%;
+      padding: 60px 5% 1em;
       margin: 0px auto 0;
       display: block;
       max-width: none; }
@@ -389,15 +420,11 @@ main section {
       main section.clip .text-cont .title, main section.clip .text-cont .main {
         position: relative;
         z-index: 1; }
-    main section.clip#clip_1 {
-      padding: 0; }
-      main section.clip#clip_1 .text-cont {
-        background-image: url("../assets/clip_1.jpg"); }
-    main section.clip#clip_2 .text-cont {
-      background-image: url("../assets/clip_2.jpg"); }
+    main section.clip#clip_3 .text-cont h1 {
+      text-align: right; }
   main section#directors {
     display: block;
-    padding-bottom: 0px; }
+    padding: 40px 0; }
     main section#directors:after {
       display: none; }
     main section#directors img {

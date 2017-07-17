@@ -1,5 +1,5 @@
 (function() {
-  var raf = window.requestAnimationFrame
+
 
   var carousel = document.querySelector('#makeup .carousel')
   carousel.main = carousel.querySelector('#makeup .carousel .main')
