@@ -220,30 +220,6 @@ main {
 
 
     &.clip {
-      &#clip_1 .bg {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: url($clip_1);
-        background-position-x: 50%;
-        background-position-y: 50%;
-        background-repeat: no-repeat;
-      }
-      &#clip_2 .bg {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: url($clip_2);
-        background-position-x: 50%;
-        background-position-y: 50%;
-        background-repeat: no-repeat;
-      }
-      &#clip_3 .bg {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: url($clip_3);
-        background-position-x: 50%;
-        background-position-y: 50%;
-        background-repeat: no-repeat;
-      }
       padding: 100px 0;
       text-align: center;
       display: flex;
@@ -252,6 +228,24 @@ main {
       align-items: center;
       width: 100%;
       margin: 0 auto;
+
+      .bg {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+      }
+
+      &#clip_1 .bg {
+        background-image: url($clip_1);
+      }
+      &#clip_2 .bg {
+        background-image: url($clip_2);
+      }
+      &#clip_3 .bg {
+        background-image: url($clip_3);
+      }
+
 
       .sizer {
         width: 60%;
