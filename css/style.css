@@ -169,7 +169,7 @@ main section {
             width: 20%;
             cursor: pointer; }
   main section.clip {
-    padding: 100px 0;
+    padding: 80px 0;
     text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -344,7 +344,9 @@ main section {
     font-size: 10vw;
     line-height: 13vw; }
   main section#makeup {
-    padding: 60px 0 80px; }
+    padding: 60px 0 60px; }
+    main section#makeup:after {
+      height: 80px; }
     main section#makeup .title {
       padding-top: 40; }
     main section#makeup .carousel-cont button {
@@ -409,7 +411,7 @@ main section {
       text-align: right; }
   main section#directors {
     display: block;
-    padding: 40px 0; }
+    padding: 30px 0; }
     main section#directors:after {
       display: none; }
     main section#directors img {

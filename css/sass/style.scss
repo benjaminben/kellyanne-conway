@@ -220,7 +220,7 @@ main {
 
 
     &.clip {
-      padding: 100px 0;
+      padding: 80px 0;
       text-align: center;
       display: flex;
       justify-content: space-around;
@@ -421,7 +421,11 @@ main {
       }
 
       &#makeup {
-        padding: 60px 0 80px;
+        padding: 60px 0 60px;
+
+        &:after {
+          height: 80px;
+        }
 
         .title {
           padding-top: 40;
@@ -518,7 +522,7 @@ main {
 
       &#directors {
         display: block;
-        padding: 40px 0;
+        padding: 30px 0;
 
         &:after {
           display: none;
