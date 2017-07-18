@@ -220,7 +220,7 @@ main section {
       vertical-align: middle;
       text-align: left;
       width: 30%;
-      max-width: 320px;
+      max-width: 350px;
       padding: 0 20px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
@@ -236,7 +236,8 @@ main section {
         background-repeat: no-repeat; }
       main section.clip .text-cont .title {
         font-style: italic;
-        margin: 0; }
+        margin: 0;
+        font-size: 2.66em; }
   main section#directors {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -260,7 +261,7 @@ main section {
       display: inline-block;
       vertical-align: middle;
       width: 30%;
-      max-width: 300px;
+      max-width: 350px;
       padding: 0 20px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
