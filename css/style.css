@@ -9,12 +9,13 @@ body {
 main section {
   position: relative; }
   main section .title {
-    font-size: 3em;
+    font-size: 2.66em;
     font-family: 'Didot';
     font-style: italic;
     letter-spacing: 0.133em;
     position: relative;
-    z-index: 10; }
+    z-index: 10;
+    text-transform: uppercase; }
   main section .text-cont {
     position: relative;
     z-index: 1; }
@@ -237,7 +238,7 @@ main section {
       main section.clip .text-cont .title {
         font-style: italic;
         margin: 0;
-        font-size: 2.66em; }
+        font-size: 2em; }
   main section#directors {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -266,7 +267,7 @@ main section {
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
       main section#directors .text-cont .title {
-        font-size: 3em;
+        font-size: 2em;
         font-style: italic;
         margin: 0; }
   main section#coming_soon {

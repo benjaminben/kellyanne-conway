@@ -20,12 +20,13 @@ main {
     position: relative;
 
     .title {
-      font-size: 3em;
+      font-size: 2.66em;
       font-family: 'Didot';
       font-style: italic;
       letter-spacing: 0.133em;
       position: relative;
       z-index: 10;
+      text-transform: uppercase;
     }
 
     .text-cont {
@@ -288,7 +289,7 @@ main {
         .title {
           font-style: italic;
           margin: 0;
-          font-size: 2.66em;
+          font-size: 2em;
         }
       }
     }
@@ -317,7 +318,7 @@ main {
         box-sizing: border-box;
 
         .title {
-          font-size: 3em;
+          font-size: 2em;
           font-style: italic;
           margin: 0;
         }
