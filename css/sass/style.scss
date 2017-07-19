@@ -16,6 +16,9 @@ body {
 }
 
 main {
+
+  font-size: 16px!important;
+
   section {
     position: relative;
 
@@ -211,7 +214,7 @@ main {
             }
 
             li {
-              width: 20%;
+              width: 30%;
               cursor: pointer;
             }
           }

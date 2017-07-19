@@ -1,6 +1,5 @@
 (function() {
 
-
   var carousel = document.querySelector('#makeup .carousel')
   carousel.main = carousel.querySelector('#makeup .carousel .main')
   carousel.slider = document.querySelector('#makeup .carousel-cont .slider')
