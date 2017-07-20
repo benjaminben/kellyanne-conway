@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Tinos:400i');
+
 $first_look: '../assets/first_look_crop.jpg';
 $makeup: '../assets/makeupBG.jpg';
 $clip_1: '../assets/clip_1.jpg';
@@ -24,7 +26,7 @@ main {
 
     .title {
       font-size: 2.66em;
-      font-family: 'Didot';
+      font-family: 'Didot', 'Tinos', serif;
       font-style: italic;
       letter-spacing: 0.133em;
       position: relative;
@@ -569,35 +571,5 @@ main {
   100% {
     transform: translate(0%, -50%)
   }
-}
-
-@font-face {
-  font-family: 'Didot';
-  src: url('../assets/fonts/Didot-Italic.eot');
-  src: url('../assets/fonts/Didot-Italic.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Didot-Italic.woff') format('woff'),
-    url('../assets/fonts/Didot-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Didot';
-  src: url('../assets/fonts/Didot-Bold.eot');
-  src: url('../assets/fonts/Didot-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Didot-Bold.woff') format('woff'),
-    url('../assets/fonts/Didot-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Didot';
-  src: url('../assets/fonts/Didot.eot');
-  src: url('../assets/fonts/Didot.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Didot.woff') format('woff'),
-    url('../assets/fonts/Didot.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
